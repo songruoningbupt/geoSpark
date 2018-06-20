@@ -43,6 +43,7 @@ object test {
         val shapefileInputLocation="E:\\workspace\\songruoningbupt-geoSpark\\data\\test\\vector\\xj"
 
         /**
+          * test1
           * java 1.7.0_51
           * 这里报
           * Exception in thread "main" java.lang.UnsupportedClassVersionError: org/opengis/referencing/FactoryException : Unsupported major.minor version 52.0
@@ -59,6 +60,19 @@ object test {
           * at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
           * at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
           * at test.test$.main(test.scala:41)
+          *
+          * test2
+          * File->setting->Java Compiler =>> 1.8
+          * java 1.8.0_172
+          * 跑通
+          *
+          * test3
+          * 回归测试
+          * File->setting->Java Compiler =>> 1.7
+          * java 1.7.0_51
+          * 依旧不行
+          *
+          *
           */
         var spatialRDD = new SpatialRDD[Geometry]
         spatialRDD.rawSpatialRDD = ShapefileReader.readToGeometryRDD(sc, shapefileInputLocation)
